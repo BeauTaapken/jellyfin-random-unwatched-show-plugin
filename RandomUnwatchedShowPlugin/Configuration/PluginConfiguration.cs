@@ -16,7 +16,7 @@ public class PluginConfiguration : BasePluginConfiguration
         WatchedStatusFilter = WatchedStatusFilter.New;
     }
     
-    public string Library { get; set; }
+    public string? Library { get; set; }
     
     public WatchedStatusFilter WatchedStatusFilter { get; set; }
 }
