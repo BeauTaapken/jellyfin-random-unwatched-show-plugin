@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fwCTi7fLxPs=",
+  "dgSpecHash": "tLxbG4T3TV0=",
   "success": true,
-  "projectFilePath": "/mnt/crucial-ssd/jellyfin-random-unwatched-show-plugin/RandomUnwatchedShowPlugin.csproj",
+  "projectFilePath": "/mnt/crucial-ssd/jellyfin-random-unwatched-show-plugin/RandomUnwatchedShowPlugin/RandomUnwatchedShowPlugin.csproj",
   "expectedPackageFiles": [
     "/home/beau/.nuget/packages/bitfaster.caching/2.5.4/bitfaster.caching.2.5.4.nupkg.sha512",
     "/home/beau/.nuget/packages/diacritics/4.0.17/diacritics.4.0.17.nupkg.sha512",

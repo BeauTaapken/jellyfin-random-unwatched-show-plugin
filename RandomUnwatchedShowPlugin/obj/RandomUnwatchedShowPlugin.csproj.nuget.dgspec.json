@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/mnt/crucial-ssd/jellyfin-random-unwatched-show-plugin/RandomUnwatchedShowPlugin.csproj": {}
+    "/mnt/crucial-ssd/jellyfin-random-unwatched-show-plugin/RandomUnwatchedShowPlugin/RandomUnwatchedShowPlugin.csproj": {}
   },
   "projects": {
-    "/mnt/crucial-ssd/jellyfin-random-unwatched-show-plugin/RandomUnwatchedShowPlugin.csproj": {
+    "/mnt/crucial-ssd/jellyfin-random-unwatched-show-plugin/RandomUnwatchedShowPlugin/RandomUnwatchedShowPlugin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/mnt/crucial-ssd/jellyfin-random-unwatched-show-plugin/RandomUnwatchedShowPlugin.csproj",
+        "projectUniqueName": "/mnt/crucial-ssd/jellyfin-random-unwatched-show-plugin/RandomUnwatchedShowPlugin/RandomUnwatchedShowPlugin.csproj",
         "projectName": "RandomUnwatchedShowPlugin",
-        "projectPath": "/mnt/crucial-ssd/jellyfin-random-unwatched-show-plugin/RandomUnwatchedShowPlugin.csproj",
+        "projectPath": "/mnt/crucial-ssd/jellyfin-random-unwatched-show-plugin/RandomUnwatchedShowPlugin/RandomUnwatchedShowPlugin.csproj",
         "packagesPath": "/home/beau/.nuget/packages/",
-        "outputPath": "/mnt/crucial-ssd/jellyfin-random-unwatched-show-plugin/obj/",
+        "outputPath": "/mnt/crucial-ssd/jellyfin-random-unwatched-show-plugin/RandomUnwatchedShowPlugin/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/beau/.nuget/NuGet/NuGet.Config"
@@ -45,10 +45,12 @@
           "targetAlias": "net9.0",
           "dependencies": {
             "Jellyfin.Controller": {
+              "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "target": "Package",
               "version": "[10.11.8, )"
             },
             "Jellyfin.Model": {
+              "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "target": "Package",
               "version": "[10.11.8, )"
             }
