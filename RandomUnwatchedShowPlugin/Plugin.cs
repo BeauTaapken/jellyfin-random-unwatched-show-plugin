@@ -5,6 +5,7 @@ using MediaBrowser.Model.Plugins;
 using MediaBrowser.Model.Serialization;
 using Microsoft.Extensions.Logging;
 using RandomUnwatchedShowPlugin.Configuration;
+using RandomUnwatchedShowPlugin.FileTransformation;
 
 namespace RandomUnwatchedShowPlugin;
 
@@ -17,6 +18,9 @@ public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
     {
         Instance = this;
         _logger = logger;
+        
+        FileTransformationHandler fileTransformationHandler = new FileTransformationHandler();
+        Task.Delay(1000).ContinueWith(_ => fileTransformationHandler.RegisterWithFileTransformation(_logger));
     }
     
     
@@ -36,4 +40,5 @@ public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
             }
         ];
     }
+ 
 }
