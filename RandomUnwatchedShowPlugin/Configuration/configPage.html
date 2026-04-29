@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Template</title>
+</head>
+<body>
+<div id="TemplateConfigPage" data-role="page" class="page type-interior pluginConfigurationPage" data-require="emby-input,emby-button,emby-select,emby-checkbox">
+    <div data-role="content">
+        <div class="content-primary">
+            <form id="TemplateConfigForm">
+                <div class="selectContainer">
+                    <label class="selectLabel" for="WatchedStatusFilter">Default Watched status for randomization</label>
+                    <select is="emby-select" id="WatchedStatusFilter" name="WatchedStatusFilter" class="emby-select-withcolor emby-select">
+                        <option id="optNew" value="New" selected="selected">New</option>
+                        <option id="optPartial" value="Partial">Partial</option>
+                        <option id="optAny" value="Any">Any</option>
+                    </select>
+                </div>
+<!--            TODO: Add dropdown selector for     -->
+                <div>
+                    <button is="emby-button" type="submit" class="raised button-submit block emby-button">
+                        <span>Save</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var TemplateConfig = {
+            pluginUniqueId: '3c913dbb-2219-4e15-92b7-22f004d10a7d'
+        };
+
+        document.querySelector('#TemplateConfigPage')
+            .addEventListener('pageshow', function() {
+                Dashboard.showLoadingMsg();
+                ApiClient.getPluginConfiguration(TemplateConfig.pluginUniqueId).then(function (config) {
+                    document.querySelector('#WatchedStatusFilter').value = config.WatchedStatusFilter;
+                    Dashboard.hideLoadingMsg();
+                });
+            });
+
+        document.querySelector('#TemplateConfigForm')
+            .addEventListener('submit', function(e) {
+                Dashboard.showLoadingMsg();
+                ApiClient.getPluginConfiguration(TemplateConfig.pluginUniqueId).then(function (config) {
+                    config.WatchedStatusFilter = document.querySelector('#WatchedStatusFilter').value;
+                    ApiClient.updatePluginConfiguration(TemplateConfig.pluginUniqueId, config).then(function (result) {
+                        Dashboard.processPluginConfigurationUpdateResult(result);
+                    });
+                });
+
+                e.preventDefault();
+                return false;
+            });
+    </script>
+</div>
+</body>
+</html>
